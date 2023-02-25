@@ -1,4 +1,4 @@
-name: Inspection
+name: Code Checks
 
 on: [push, pull_request]
 
