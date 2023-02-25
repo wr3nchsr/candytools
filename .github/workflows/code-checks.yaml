@@ -1,0 +1,28 @@
+name: Inspection
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: "ubuntu-latest"
+
+    strategy:
+      fail-fast: false
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set Up Python 3.7
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install codespell flake8
+
+    - name: Lint with Flake8
+      run: |
+        flake8 .
+        
+    - name: Typos Check with Codespell
+      run: codespell
