@@ -1,5 +1,8 @@
-from lib.extract import *
-from lib.cli.common import commands_parser, config
+import os
+import lib.log as log
+
+from lib.extract import extract
+from lib.cli.common import commands_parser
 
 parser = commands_parser.add_parser(
     "extract",

@@ -30,7 +30,9 @@ def _sdat_to_ext4(dat, transfer, output):
                     end = block[1]
                     block_count = end - begin
                     output_img.seek(begin * block_size)
-                    log.debug(f"Copying {block_count} blocks to position {begin}")
+                    log.debug(
+                        f"Copying {block_count} blocks to position {begin}"
+                        )
                     while block_count > 0:
                         output_img.write(dat_fd.read(block_size))
                         block_count -= 1
@@ -77,7 +79,9 @@ def _range_set(src):
         log.error("Error on parsing following data to range_set:")
         log.error(f"{src[:-1]}")
         return -1
-    return tuple([(num_set[i], num_set[i + 1]) for i in range(1, len(num_set), 2)])
+    return tuple(
+        [(num_set[i], num_set[i + 1]) for i in range(1, len(num_set), 2)]
+        )
 
 
 def _detect(path):

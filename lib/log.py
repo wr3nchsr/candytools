@@ -21,28 +21,49 @@ def set_level(level):
 
 
 def debug(msg):
-    _logger.log(logging.DEBUG, msg, extra={"prefix": _log_prefixes["debug"]})
+    _logger.log(
+        logging.DEBUG, msg,
+        extra={"prefix": _log_prefixes["debug"]}
+        )
 
 
 def info(msg):
-    _logger.log(logging.INFO, msg, extra={"prefix": _log_prefixes["info"]})
+    _logger.log(
+        logging.INFO, msg,
+        extra={"prefix": _log_prefixes["info"]}
+        )
 
 
 def success(msg):
-    _logger.log(logging.INFO, msg, extra={"prefix": _log_prefixes["success"]})
+    _logger.log(
+        logging.INFO, msg,
+        extra={"prefix": _log_prefixes["success"]}
+        )
 
 
 def failure(msg):
-    _logger.log(logging.INFO, msg, extra={"prefix": _log_prefixes["failure"]})
+    _logger.log(
+        logging.INFO, msg,
+        extra={"prefix": _log_prefixes["failure"]}
+        )
 
 
 def warning(msg):
-    _logger.log(logging.WARN, msg, extra={"prefix": _log_prefixes["warning"]})
+    _logger.log(
+        logging.WARN, msg,
+        extra={"prefix": _log_prefixes["warning"]}
+        )
 
 
 def error(msg):
-    _logger.log(logging.ERROR, msg, extra={"prefix": _log_prefixes["error"]})
+    _logger.log(
+        logging.ERROR, msg,
+        extra={"prefix": _log_prefixes["error"]}
+        )
 
 
 def critical(msg):
-    _logger.log(logging.CRITICAL, msg, extra={"prefix": _log_prefixes["critical"]})
+    _logger.log(
+        logging.CRITICAL, msg,
+        extra={"prefix": _log_prefixes["critical"]}
+        )

@@ -1,7 +1,8 @@
 import os
 import argparse
+import lib.log as log
 
-from lib.checksum import *
+from lib.checksum import gen_hashes, gen_diff
 from lib.cli.common import commands_parser
 
 parser = commands_parser.add_parser(
@@ -19,7 +20,12 @@ gen = subcommands.add_parser(
 )
 
 gen.add_argument(
-    "-d", "--dir", metavar="directory", help="Input directory", type=str, required=True
+    "-d",
+    "--dir",
+    metavar="directory",
+    help="Input directory",
+    type=str,
+    required=True
 )
 
 gen.add_argument(
@@ -68,7 +74,9 @@ def main(args):
     if args.subcommand == "comp":
         path = args.dir
         if not os.path.isdir(path):
-            log.critical(f'The provided path "{path}" is not a valid directory')
+            log.critical(
+                f'The provided path "{path}" is not a valid directory'
+                )
             exit(1)
 
         hashes = gen_hashes(path)

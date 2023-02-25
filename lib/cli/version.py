@@ -1,6 +1,6 @@
 from lib.version import __version__
 import lib.log as log
-from lib.cli.common import commands_parser, config
+from lib.cli.common import commands_parser
 
 parser = commands_parser.add_parser(
     "version",

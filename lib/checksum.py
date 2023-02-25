@@ -25,11 +25,11 @@ def gen_hashes(path):
     for subdir, _, files in os.walk(path):
         for f in files:
             fname = os.path.join(subdir, f)
-            key = fname.replace("\\", "/")[fname.rfind(start) :]
+            key = fname.replace("\\", "/")[fname.rfind(start):]
             try:
                 chk[key] = _hashfile(fname)
                 log.debug(f"{key}: {chk[key]}")
-            except:
+            except Exception:
                 fail += 1
     log.success(f"Checksums computed for {len(chk)} files")
     log.failure(f"Failed to compute checksums for {fail} files")
@@ -45,9 +45,9 @@ def save_hashes(hashes, output):
 
 def _load(fd):
     chk = {}
-    for l in fd.readlines():
-        l = l.split(",")
-        chk[l[0]] = l[1].strip()
+    for line in fd.readlines():
+        line = line.split(",")
+        chk[line[0]] = line[1].strip()
     fd.close()
     return chk
 
@@ -55,7 +55,7 @@ def _load(fd):
 def _get_added_modified(old, new):
     add, mod = [], []
     for f in new:
-        if not f in old:
+        if f not in old:
             add.append(f)
         elif new[f] != old[f]:
             mod.append(f)
@@ -65,7 +65,7 @@ def _get_added_modified(old, new):
 def _get_deleted(old, new):
     out = []
     for f in old:
-        if not f in new:
+        if f not in new:
             out.append(f)
     return out
 
@@ -80,7 +80,8 @@ def gen_diff(old_fd, new_fd):
     deleted = _get_deleted(old_chk, new_chk)
 
     log.success(
-        f"Diffing results: {len(added)} added, {len(modified)} modified, {len(deleted)} deleted"
+        f"Diffing results: {len(added)} added, "
+        + f"{len(modified)} modified, {len(deleted)} deleted"
     )
     return _format_diff(added, modified, deleted)
 

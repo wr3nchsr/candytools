@@ -23,7 +23,8 @@ def run(cmd, stdin=None, **kwargs):
     if (exitcode, stderr) != (0, ""):
         if exitcode != 0:
             log.error(
-                f"An error occurred while running '{subprocess.list2cmdline(cmd)}'\n"
+                "An error occurred while running"
+                + f"'{subprocess.list2cmdline(cmd)}'\n"
                 + f"\texit code: {exitcode}\n"
                 + f"\tstderr: {stderr[:-1]}"
             )

@@ -1,4 +1,7 @@
-from lib.decompile import *
+import os
+import lib.log as log
+
+from lib.decompile import decompile
 from lib.cli.common import commands_parser, config
 
 parser = commands_parser.add_parser(

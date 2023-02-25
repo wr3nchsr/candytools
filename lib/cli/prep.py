@@ -1,8 +1,10 @@
-from lib.unpack import *
-from lib.extract import *
-from lib.decompile import *
-from lib.convert import *
-from lib.checksum import *
+import os
+import lib.log as log
+from lib.unpack import unpack
+from lib.extract import extract
+from lib.decompile import decompile
+from lib.convert import convert
+from lib.checksum import gen_hashes, save_hashes
 from lib.cli.common import commands_parser, config
 
 parser = commands_parser.add_parser(

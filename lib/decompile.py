@@ -65,7 +65,11 @@ def decompile(config, path, output):
 
     log.info("Collecing all APK, JAR, ODEX, OAT files")
     apk, jar, odex = _crawl_path(path)
-    log.success(f"Found {len(apk)} APK, {len(jar)} JAR, {len(odex)} ODEX and OAT files")
+    log.success(
+        f"Found {len(apk)} APK, "
+        + f"{len(jar)} JAR, "
+        + f"{len(odex)} ODEX and OAT files"
+        )
 
     log.info(f"Decompiling {len(apk)} APKs")
     apk_path = os.path.join(apps_path, "apks")

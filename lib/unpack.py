@@ -28,7 +28,8 @@ def _move_output(aik, img, outdir):
 def unpack(config, img_path, outdir):
     if not os.path.isdir(config["aik"]):
         log.critical(
-            "AIK is not installed. Please install it or change its location in default.conf"
+            "AIK is not installed."
+            + "Please install it or change its location in default.conf"
         )
         return
 

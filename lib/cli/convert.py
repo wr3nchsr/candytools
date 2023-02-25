@@ -1,4 +1,7 @@
-from lib.convert import *
+import os
+
+import lib.log as log
+from lib.convert import convert
 from lib.cli.common import commands_parser, config
 
 parser = commands_parser.add_parser(
