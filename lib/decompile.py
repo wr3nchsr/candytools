@@ -63,7 +63,7 @@ def decompile(config, path, output):
         shutil.rmtree(apps_path)
     os.mkdir(apps_path)
 
-    log.info("Collecing all APK, JAR, ODEX, OAT files")
+    log.info("Collecting all APK, JAR, ODEX, OAT files")
     apk, jar, odex = _crawl_path(path)
     log.success(
         f"Found {len(apk)} APK, "

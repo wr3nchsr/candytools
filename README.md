@@ -80,7 +80,7 @@ docker run -it -v ${PWD}:/ota --rm "candytools" prep -i /ota -o /ota/output -d
 - [ ] Add comments to the code.
 - [ ] Add tests.
 - [ ] Automate the identification of files inside the OTA directory.
-- [ ] Support splitted sparse images conversion.
+- [ ] Support split sparse images conversion.
 - [ ] Support VDEX for decompilation (android >= 8).
 <!-- https://github.com/lief-project/LIEF/issues/549 -->
 <!-- https://github.com/anestisb/vdexExtractor -->

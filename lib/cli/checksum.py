@@ -15,8 +15,8 @@ subcommands = parser.add_subparsers(dest="subcommand")
 
 gen = subcommands.add_parser(
     "comp",
-    help="Compute files' checksum recusively for a directory",
-    description="Compute files' checksum recusively for a directory",
+    help="Compute files' checksum recursively for a directory",
+    description="Compute files' checksum recursively for a directory",
 )
 
 gen.add_argument(

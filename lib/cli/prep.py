@@ -34,7 +34,7 @@ parser.add_argument(
 parser.add_argument(
     "-d",
     "--no-decompile",
-    help="Don't decompile applicaitons from the resulting system",
+    help="Don't decompile applications from the resulting system",
     action="store_true",
 )
 
